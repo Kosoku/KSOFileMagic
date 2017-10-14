@@ -49,6 +49,10 @@
 		0703919C1F927C9500D29F8F /* tar.h in Headers */ = {isa = PBXBuildFile; fileRef = 070391741F927C9500D29F8F /* tar.h */; };
 		0703919D1F927C9500D29F8F /* vasprintf.c in Sources */ = {isa = PBXBuildFile; fileRef = 070391751F927C9500D29F8F /* vasprintf.c */; };
 		0703919F1F927CF800D29F8F /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 0703919E1F927CF800D29F8F /* config.h */; };
+		070391A21F9283D800D29F8F /* KSOFileMagicManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 070391A01F9283D800D29F8F /* KSOFileMagicManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		070391A31F9283D800D29F8F /* KSOFileMagicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 070391A11F9283D800D29F8F /* KSOFileMagicManager.m */; };
+		070391AA1F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 070391A81F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		070391AB1F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 070391A91F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +101,10 @@
 		070391741F927C9500D29F8F /* tar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tar.h; path = src/tar.h; sourceTree = "<group>"; };
 		070391751F927C9500D29F8F /* vasprintf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vasprintf.c; path = src/vasprintf.c; sourceTree = "<group>"; };
 		0703919E1F927CF800D29F8F /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		070391A01F9283D800D29F8F /* KSOFileMagicManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOFileMagicManager.h; sourceTree = "<group>"; };
+		070391A11F9283D800D29F8F /* KSOFileMagicManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOFileMagicManager.m; sourceTree = "<group>"; };
+		070391A81F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KSOFileMagicExtensionsPrivate.h"; sourceTree = "<group>"; };
+		070391A91F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+KSOFileMagicExtensionsPrivate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +149,8 @@
 		070390E81F9267A300D29F8F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				070391A01F9283D800D29F8F /* KSOFileMagicManager.h */,
+				070391A11F9283D800D29F8F /* KSOFileMagicManager.m */,
 				0703914A1F927BA800D29F8F /* Private */,
 			);
 			name = Source;
@@ -166,6 +176,8 @@
 		0703914A1F927BA800D29F8F /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				070391A81F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.h */,
+				070391A91F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.m */,
 				0703914B1F927BE400D29F8F /* file */,
 			);
 			path = Private;
@@ -225,8 +237,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070391A21F9283D800D29F8F /* KSOFileMagicManager.h in Headers */,
 				070391871F927C9500D29F8F /* file.h in Headers */,
 				070391971F927C9500D29F8F /* readelf.h in Headers */,
+				070391AA1F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.h in Headers */,
 				0703919C1F927C9500D29F8F /* tar.h in Headers */,
 				070391921F927C9500D29F8F /* mygetopt.h in Headers */,
 				070391811F927C9500D29F8F /* der.h in Headers */,
@@ -325,11 +339,13 @@
 				070391801F927C9500D29F8F /* der.c in Sources */,
 				070391891F927C9500D29F8F /* fsmagic.c in Sources */,
 				070391841F927C9500D29F8F /* encoding.c in Sources */,
+				070391AB1F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.m in Sources */,
 				0703918B1F927C9500D29F8F /* getline.c in Sources */,
 				0703918C1F927C9500D29F8F /* getopt_long.c in Sources */,
 				070391961F927C9500D29F8F /* readelf.c in Sources */,
 				070391791F927C9500D29F8F /* asctime_r.c in Sources */,
 				070391991F927C9500D29F8F /* strcasestr.c in Sources */,
+				070391A31F9283D800D29F8F /* KSOFileMagicManager.m in Sources */,
 				0703917C1F927C9500D29F8F /* cdf.c in Sources */,
 				070391981F927C9500D29F8F /* softmagic.c in Sources */,
 				070391821F927C9500D29F8F /* dprintf.c in Sources */,
@@ -403,7 +419,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"HAVE_CONFIG_H=1",
+					HAVE_CONFIG_H,
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -473,7 +489,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "HAVE_CONFIG_H=1";
+				GCC_PREPROCESSOR_DEFINITIONS = HAVE_CONFIG_H;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
