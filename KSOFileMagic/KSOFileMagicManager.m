@@ -56,6 +56,7 @@ static magic_t kMagic;
 }
 
 - (void)checkFileURL:(NSURL *)fileURL {
+    magic_setflags(self.magic, MAGIC_MIME);
     const char *output = magic_file(self.magic, fileURL.fileSystemRepresentation);
     NSString *string = [NSString stringWithUTF8String:output];
     

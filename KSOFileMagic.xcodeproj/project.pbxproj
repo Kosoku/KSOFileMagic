@@ -100,7 +100,44 @@
 		070391E61F9291BB00D29F8F /* tar.h in Headers */ = {isa = PBXBuildFile; fileRef = 070391741F927C9500D29F8F /* tar.h */; };
 		070391E71F9291BB00D29F8F /* vasprintf.c in Sources */ = {isa = PBXBuildFile; fileRef = 070391751F927C9500D29F8F /* vasprintf.c */; };
 		070391E81F9292BB00D29F8F /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070391E91F9292BB00D29F8F /* Stanley.framework */; };
+		070391F21F92950A00D29F8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 070391F11F92950A00D29F8F /* AppDelegate.m */; };
+		070391F51F92950A00D29F8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070391F41F92950A00D29F8F /* ViewController.m */; };
+		070391F71F92950A00D29F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 070391F61F92950A00D29F8F /* Assets.xcassets */; };
+		070391FA1F92950A00D29F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070391F81F92950A00D29F8F /* Main.storyboard */; };
+		070391FD1F92950A00D29F8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 070391FC1F92950A00D29F8F /* main.m */; };
+		070392021F92952000D29F8F /* KSOFileMagic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070391B11F928FA500D29F8F /* KSOFileMagic.framework */; };
+		070392031F92952000D29F8F /* KSOFileMagic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 070391B11F928FA500D29F8F /* KSOFileMagic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		070392071F92954100D29F8F /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070391E91F9292BB00D29F8F /* Stanley.framework */; };
+		070392081F92954100D29F8F /* Stanley.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 070391E91F9292BB00D29F8F /* Stanley.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0703920A1F92996600D29F8F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 070392091F92996600D29F8F /* libz.tbd */; };
+		0703920B1F929B0700D29F8F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 070392091F92996600D29F8F /* libz.tbd */; };
+		0703920D1F929B0E00D29F8F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0703920C1F929B0E00D29F8F /* libz.tbd */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		070392041F92952000D29F8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 070390D41F9260FA00D29F8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 070391B01F928FA500D29F8F;
+			remoteInfo = "KSOFileMagic-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		070392061F92952000D29F8F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				070392031F92952000D29F8F /* KSOFileMagic.framework in Embed Frameworks */,
+				070392081F92954100D29F8F /* Stanley.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		070390DF1F92668A00D29F8F /* KSOFileMagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KSOFileMagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +192,18 @@
 		070391B11F928FA500D29F8F /* KSOFileMagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KSOFileMagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		070391B91F92915A00D29F8F /* KSOFileMagic-macOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KSOFileMagic-macOS-Info.plist"; sourceTree = "<group>"; };
 		070391E91F9292BB00D29F8F /* Stanley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Stanley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		070391EE1F92950900D29F8F /* Demo-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		070391F01F92950A00D29F8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		070391F11F92950A00D29F8F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		070391F31F92950A00D29F8F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		070391F41F92950A00D29F8F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		070391F61F92950A00D29F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		070391F91F92950A00D29F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		070391FB1F92950A00D29F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		070391FC1F92950A00D29F8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		070391FE1F92950A00D29F8F /* Demo_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo_macOS.entitlements; sourceTree = "<group>"; };
+		070392091F92996600D29F8F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0703920C1F929B0E00D29F8F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0703920D1F929B0E00D29F8F /* libz.tbd in Frameworks */,
 				070390EC1F9268F100D29F8F /* Stanley.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,7 +220,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0703920B1F929B0700D29F8F /* libz.tbd in Frameworks */,
 				070391E81F9292BB00D29F8F /* Stanley.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		070391EB1F92950900D29F8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0703920A1F92996600D29F8F /* libz.tbd in Frameworks */,
+				070392021F92952000D29F8F /* KSOFileMagic.framework in Frameworks */,
+				070392071F92954100D29F8F /* Stanley.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				070390E11F92668A00D29F8F /* KSOFileMagic */,
+				070391EF1F92950A00D29F8F /* Demo-macOS */,
 				070390E01F92668A00D29F8F /* Products */,
 				070390EB1F9268F100D29F8F /* Frameworks */,
 			);
@@ -191,6 +253,7 @@
 			children = (
 				070390DF1F92668A00D29F8F /* KSOFileMagic.framework */,
 				070391B11F928FA500D29F8F /* KSOFileMagic.framework */,
+				070391EE1F92950900D29F8F /* Demo-macOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,6 +291,8 @@
 		070390EB1F9268F100D29F8F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0703920C1F929B0E00D29F8F /* libz.tbd */,
+				070392091F92996600D29F8F /* libz.tbd */,
 				070391E91F9292BB00D29F8F /* Stanley.framework */,
 				070390ED1F9268F100D29F8F /* Stanley.framework */,
 			);
@@ -289,6 +354,22 @@
 				070391751F927C9500D29F8F /* vasprintf.c */,
 			);
 			path = file;
+			sourceTree = "<group>";
+		};
+		070391EF1F92950A00D29F8F /* Demo-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				070391F01F92950A00D29F8F /* AppDelegate.h */,
+				070391F11F92950A00D29F8F /* AppDelegate.m */,
+				070391F31F92950A00D29F8F /* ViewController.h */,
+				070391F41F92950A00D29F8F /* ViewController.m */,
+				070391F61F92950A00D29F8F /* Assets.xcassets */,
+				070391F81F92950A00D29F8F /* Main.storyboard */,
+				070391FB1F92950A00D29F8F /* Info.plist */,
+				070391FC1F92950A00D29F8F /* main.m */,
+				070391FE1F92950A00D29F8F /* Demo_macOS.entitlements */,
+			);
+			path = "Demo-macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +454,25 @@
 			productReference = 070391B11F928FA500D29F8F /* KSOFileMagic.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		070391ED1F92950900D29F8F /* Demo-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 070391FF1F92950A00D29F8F /* Build configuration list for PBXNativeTarget "Demo-macOS" */;
+			buildPhases = (
+				070391EA1F92950900D29F8F /* Sources */,
+				070391EB1F92950900D29F8F /* Frameworks */,
+				070391EC1F92950900D29F8F /* Resources */,
+				070392061F92952000D29F8F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				070392051F92952000D29F8F /* PBXTargetDependency */,
+			);
+			name = "Demo-macOS";
+			productName = "Demo-macOS";
+			productReference = 070391EE1F92950900D29F8F /* Demo-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -391,6 +491,10 @@
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
+					070391ED1F92950900D29F8F = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 070390D71F9260FA00D29F8F /* Build configuration list for PBXProject "KSOFileMagic" */;
@@ -399,6 +503,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 070390D31F9260FA00D29F8F;
 			productRefGroup = 070390E01F92668A00D29F8F /* Products */;
@@ -407,6 +512,7 @@
 			targets = (
 				070390DE1F92668A00D29F8F /* KSOFileMagic-iOS */,
 				070391B01F928FA500D29F8F /* KSOFileMagic-macOS */,
+				070391ED1F92950900D29F8F /* Demo-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -426,6 +532,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				070391C01F9291B300D29F8F /* magic.mgc in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		070391EC1F92950900D29F8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				070391F71F92950A00D29F8F /* Assets.xcassets in Resources */,
+				070391FA1F92950A00D29F8F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +623,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		070391EA1F92950900D29F8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				070391F51F92950A00D29F8F /* ViewController.m in Sources */,
+				070391FD1F92950A00D29F8F /* main.m in Sources */,
+				070391F21F92950A00D29F8F /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		070392051F92952000D29F8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 070391B01F928FA500D29F8F /* KSOFileMagic-macOS */;
+			targetProxy = 070392041F92952000D29F8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		070391F81F92950A00D29F8F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				070391F91F92950A00D29F8F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		070390D81F9260FA00D29F8F /* Debug */ = {
@@ -808,6 +952,127 @@
 			};
 			name = Release;
 		};
+		070392001F92950A00D29F8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Demo-macOS/Demo_macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 74KPPW2K35;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Demo-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFileMagic.Demo-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		070392011F92950A00D29F8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Demo-macOS/Demo_macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 74KPPW2K35;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Demo-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFileMagic.Demo-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -834,6 +1099,15 @@
 			buildConfigurations = (
 				070391B71F928FA500D29F8F /* Debug */,
 				070391B81F928FA500D29F8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		070391FF1F92950A00D29F8F /* Build configuration list for PBXNativeTarget "Demo-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				070392001F92950A00D29F8F /* Debug */,
+				070392011F92950A00D29F8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
