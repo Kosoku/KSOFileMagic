@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (class,readonly,nonatomic) KSOFileMagicManager *sharedManager;
 
 - (nullable KSOFileMagicAttributes *)attributesForFileURL:(NSURL *)fileURL;
+- (nullable KSOFileMagicAttributes *)attributesForPath:(NSString *)path;
+- (nullable KSOFileMagicAttributes *)attributesForData:(NSData *)data;
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;

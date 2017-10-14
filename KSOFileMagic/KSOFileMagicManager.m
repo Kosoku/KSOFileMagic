@@ -28,10 +28,12 @@ static magic_t kMagic;
 
 @interface KSOFileMagicManager ()
 @property (assign,nonatomic) magic_t magic;
+@property (readonly,nonatomic) int baseMagicFlags;
 
 - (instancetype)initWithMagic:(magic_t)magic;
 
 - (NSString *)_magicStringForFileURL:(NSURL *)fileURL magicFlags:(int)magicFlags;
+- (NSString *)_magicStringForData:(NSData *)data magicFlags:(int)magicFlags;
 - (KSOFileMagicAttributes *)_attributesForMagicString:(NSString *)magicString;
 @end
 
@@ -50,7 +52,13 @@ static magic_t kMagic;
 }
 #pragma mark *** Public Methods ***
 - (KSOFileMagicAttributes *)attributesForFileURL:(NSURL *)fileURL {
-    return [self _attributesForMagicString:[self _magicStringForFileURL:fileURL magicFlags:MAGIC_MIME_TYPE]];
+    return [self _attributesForMagicString:[self _magicStringForFileURL:fileURL magicFlags:self.baseMagicFlags]];
+}
+- (KSOFileMagicAttributes *)attributesForPath:(NSString *)path {
+    return [self _attributesForMagicString:[self _magicStringForFileURL:[NSURL fileURLWithPath:path] magicFlags:self.baseMagicFlags]];
+}
+- (KSOFileMagicAttributes *)attributesForData:(NSData *)data {
+    return [self _attributesForMagicString:[self _magicStringForData:data magicFlags:self.baseMagicFlags]];
 }
 #pragma mark Properties
 + (KSOFileMagicManager *)sharedManager {
@@ -78,6 +86,12 @@ static magic_t kMagic;
     
     return [NSString stringWithUTF8String:magicString];
 }
+- (NSString *)_magicStringForData:(NSData *)data magicFlags:(int)magicFlags; {
+    magic_setflags(self.magic, magicFlags);
+    const char *magicString = magic_buffer(self.magic, data.bytes, data.length);
+    
+    return [NSString stringWithUTF8String:magicString];
+}
 - (KSOFileMagicAttributes *)_attributesForMagicString:(NSString *)magicString; {
     NSString *MIMEType = [magicString stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
     NSString *UTI = (__bridge_transfer NSString *)UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (__bridge CFStringRef)MIMEType, NULL);
@@ -90,6 +104,10 @@ static magic_t kMagic;
     NSSet *fileExtensionsSet = [NSSet setWithArray:fileExtensions];
     
     return [[KSOFileMagicAttributes alloc] initWithUniformTypeIdentifier:UTI MIMEType:MIMEType fileExtensions:fileExtensionsSet];
+}
+
+- (int)baseMagicFlags {
+    return MAGIC_MIME_TYPE;
 }
 
 @end
