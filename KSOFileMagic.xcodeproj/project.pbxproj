@@ -19,7 +19,9 @@
 		070390D41F9260FA00D29F8F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KSO;
 				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Kosoku Interactive, LLC.";
 			};
 			buildConfigurationList = 070390D71F9260FA00D29F8F /* Build configuration list for PBXProject "KSOFileMagic" */;
 			compatibilityVersion = "Xcode 8.0";
