@@ -117,7 +117,7 @@ const size_t file_nnames = FILE_NAMES_SIZE;
 
 private int getvalue(struct magic_set *ms, struct magic *, const char **, int);
 private int hextoint(int);
-private const char *getstr(struct magic_set *, struct magic *, const char *,
+private __attribute__((overloadable)) const char *getstr(struct magic_set *, struct magic *, const char *,
     int);
 private int parse(struct magic_set *, struct magic_entry *, const char *,
     size_t, int);
@@ -2720,7 +2720,7 @@ getvalue(struct magic_set *ms, struct magic *m, const char **p, int action)
  * Copy the converted version to "m->value.s", and the length in m->vallen.
  * Return updated scan pointer as function result. Warn if set.
  */
-private const char *
+private __attribute__((overloadable)) const char *
 getstr(struct magic_set *ms, struct magic *m, const char *s, int warn)
 {
 	const char *origs = s;
