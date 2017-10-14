@@ -112,6 +112,12 @@
 		0703920A1F92996600D29F8F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 070392091F92996600D29F8F /* libz.tbd */; };
 		0703920B1F929B0700D29F8F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 070392091F92996600D29F8F /* libz.tbd */; };
 		0703920D1F929B0E00D29F8F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0703920C1F929B0E00D29F8F /* libz.tbd */; };
+		070392101F92B29500D29F8F /* KSOFileMagicAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0703920E1F92B29500D29F8F /* KSOFileMagicAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		070392111F92B29500D29F8F /* KSOFileMagicAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0703920E1F92B29500D29F8F /* KSOFileMagicAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		070392121F92B29500D29F8F /* KSOFileMagicAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0703920F1F92B29500D29F8F /* KSOFileMagicAttributes.m */; };
+		070392131F92B29500D29F8F /* KSOFileMagicAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0703920F1F92B29500D29F8F /* KSOFileMagicAttributes.m */; };
+		070392161F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 070392141F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		070392171F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 070392141F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +210,9 @@
 		070391FE1F92950A00D29F8F /* Demo_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo_macOS.entitlements; sourceTree = "<group>"; };
 		070392091F92996600D29F8F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0703920C1F929B0E00D29F8F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		0703920E1F92B29500D29F8F /* KSOFileMagicAttributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOFileMagicAttributes.h; sourceTree = "<group>"; };
+		0703920F1F92B29500D29F8F /* KSOFileMagicAttributes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOFileMagicAttributes.m; sourceTree = "<group>"; };
+		070392141F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +282,8 @@
 			children = (
 				070391A01F9283D800D29F8F /* KSOFileMagicManager.h */,
 				070391A11F9283D800D29F8F /* KSOFileMagicManager.m */,
+				0703920E1F92B29500D29F8F /* KSOFileMagicAttributes.h */,
+				0703920F1F92B29500D29F8F /* KSOFileMagicAttributes.m */,
 				0703914A1F927BA800D29F8F /* Private */,
 			);
 			name = Source;
@@ -304,6 +315,7 @@
 			children = (
 				070391A81F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.h */,
 				070391A91F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.m */,
+				070392141F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h */,
 				0703914B1F927BE400D29F8F /* file */,
 			);
 			path = Private;
@@ -383,6 +395,7 @@
 				070391871F927C9500D29F8F /* file.h in Headers */,
 				070391971F927C9500D29F8F /* readelf.h in Headers */,
 				070391AA1F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.h in Headers */,
+				070392161F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h in Headers */,
 				0703919C1F927C9500D29F8F /* tar.h in Headers */,
 				070391921F927C9500D29F8F /* mygetopt.h in Headers */,
 				070391811F927C9500D29F8F /* der.h in Headers */,
@@ -390,6 +403,7 @@
 				0703917D1F927C9500D29F8F /* cdf.h in Headers */,
 				070391911F927C9500D29F8F /* magic.h in Headers */,
 				0703919F1F927CF800D29F8F /* config.h in Headers */,
+				070392101F92B29500D29F8F /* KSOFileMagicAttributes.h in Headers */,
 				070391851F927C9500D29F8F /* file_opts.h in Headers */,
 				070390E41F92668B00D29F8F /* KSOFileMagic.h in Headers */,
 			);
@@ -403,6 +417,7 @@
 				070391DD1F9291BB00D29F8F /* magic.h in Headers */,
 				070391D31F9291BB00D29F8F /* file.h in Headers */,
 				070391CD1F9291BB00D29F8F /* der.h in Headers */,
+				070392171F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h in Headers */,
 				070391C11F9291BB00D29F8F /* config.h in Headers */,
 				070391BC1F9291A100D29F8F /* KSOFileMagicManager.h in Headers */,
 				070391BE1F9291A900D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.h in Headers */,
@@ -410,6 +425,7 @@
 				070391BB1F92919B00D29F8F /* KSOFileMagic.h in Headers */,
 				070391D11F9291BB00D29F8F /* file_opts.h in Headers */,
 				070391E61F9291BB00D29F8F /* tar.h in Headers */,
+				070392111F92B29500D29F8F /* KSOFileMagicAttributes.h in Headers */,
 				070391E31F9291BB00D29F8F /* readelf.h in Headers */,
 				070391C91F9291BB00D29F8F /* cdf.h in Headers */,
 			);
@@ -559,6 +575,7 @@
 				070391931F927C9500D29F8F /* pread.c in Sources */,
 				0703918D1F927C9500D29F8F /* gmtime_r.c in Sources */,
 				070391781F927C9500D29F8F /* ascmagic.c in Sources */,
+				070392121F92B29500D29F8F /* KSOFileMagicAttributes.m in Sources */,
 				070391761F927C9500D29F8F /* apprentice.c in Sources */,
 				070391901F927C9500D29F8F /* magic.c in Sources */,
 				0703917B1F927C9500D29F8F /* cdf_time.c in Sources */,
@@ -597,6 +614,7 @@
 				070391D01F9291BB00D29F8F /* encoding.c in Sources */,
 				070391E21F9291BB00D29F8F /* readelf.c in Sources */,
 				070391C21F9291BB00D29F8F /* apprentice.c in Sources */,
+				070392131F92B29500D29F8F /* KSOFileMagicAttributes.m in Sources */,
 				070391C31F9291BB00D29F8F /* apptype.c in Sources */,
 				070391D21F9291BB00D29F8F /* file.c in Sources */,
 				070391C51F9291BB00D29F8F /* asctime_r.c in Sources */,

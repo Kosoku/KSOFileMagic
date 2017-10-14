@@ -24,3 +24,4 @@ FOUNDATION_EXPORT const unsigned char KSOFileMagicVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <KSOFileMagic/PublicHeader.h>
 
 #import <KSOFileMagic/KSOFileMagicManager.h>
+#import <KSOFileMagic/KSOFileMagicAttributes.h>

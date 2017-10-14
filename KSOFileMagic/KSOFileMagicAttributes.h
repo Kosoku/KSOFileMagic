@@ -1,6 +1,6 @@
 //
-//  ViewController.m
-//  Demo-macOS
+//  KSOFileMagicAttributes.h
+//  KSOFileMagic
 //
 //  Created by William Towe on 10/14/17.
 //  Copyright © 2017 Kosoku Interactive, LLC. All rights reserved.
@@ -13,37 +13,21 @@
 //
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "ViewController.h"
+#import <Foundation/Foundation.h>
 
-#import <KSOFileMagic/KSOFileMagic.h>
+NS_ASSUME_NONNULL_BEGIN
 
-@interface ViewController ()
+@interface KSOFileMagicAttributes : NSObject
 
-@end
+@property (readonly,copy,nonatomic) NSString *uniformTypeIdentifier;
+@property (readonly,copy,nonatomic) NSString *MIMEType;
+@property (readonly,copy,nonatomic) NSSet<NSString *> *fileExtensions;
 
-@implementation ViewController
+- (BOOL)hasFileExtension:(NSString *)fileExtension;
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    
-}
-
-- (IBAction)_identifyFilesAction:(id)sender {
-    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
-    
-    [openPanel setCanChooseFiles:YES];
-    [openPanel setCanChooseDirectories:NO];
-    [openPanel setAllowsMultipleSelection:YES];
-    [openPanel beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse result) {
-        if (result != NSModalResponseOK) {
-            return;
-        }
-        
-        for (NSURL *fileURL in openPanel.URLs) {
-            NSLog(@"%@",[KSOFileMagicManager.sharedManager attributesForFileURL:fileURL]);
-        }
-    }];
-}
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 @end
+
+NS_ASSUME_NONNULL_END

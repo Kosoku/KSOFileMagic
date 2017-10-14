@@ -15,9 +15,14 @@
 
 #import "KSOFileMagicManager.h"
 #import "NSBundle+KSOFileMagicExtensionsPrivate.h"
+#import "KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h"
 #import "magic.h"
 
 #import <Stanley/Stanley.h>
+
+#if (TARGET_OS_IPHONE)
+#import <MobileCoreServices/MobileCoreServices.h>
+#endif
 
 static magic_t kMagic;
 
@@ -25,27 +30,39 @@ static magic_t kMagic;
 @property (assign,nonatomic) magic_t magic;
 
 - (instancetype)initWithMagic:(magic_t)magic;
+
+- (NSString *)_magicStringForFileURL:(NSURL *)fileURL magicFlags:(int)magicFlags;
+- (KSOFileMagicAttributes *)_attributesForMagicString:(NSString *)magicString;
 @end
 
 @implementation KSOFileMagicManager
-
+#pragma mark *** Subclass Overrides ***
 + (void)initialize {
     if (self == KSOFileMagicManager.class) {
         kMagic = magic_open(MAGIC_NONE);
         
         NSURL *fileURL = [[NSBundle KSO_fileMagicFrameworkBundle] URLForResource:@"magic" withExtension:@"mgc"];
         
-        KSTLog(@"fileURL %@",fileURL);
-        
         if (magic_load(kMagic, fileURL.fileSystemRepresentation) == -1) {
             KSTLog(@"failed to open magic db: %s",strerror(errno));
         }
     }
 }
-
-- (instancetype)init {
-    return [self initWithMagic:kMagic];
+#pragma mark *** Public Methods ***
+- (KSOFileMagicAttributes *)attributesForFileURL:(NSURL *)fileURL {
+    return [self _attributesForMagicString:[self _magicStringForFileURL:fileURL magicFlags:MAGIC_MIME_TYPE]];
 }
+#pragma mark Properties
++ (KSOFileMagicManager *)sharedManager {
+    static KSOFileMagicManager *kRetval;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        kRetval = [[KSOFileMagicManager alloc] initWithMagic:kMagic];
+    });
+    return kRetval;
+}
+
+#pragma mark *** Private Methods ***
 - (instancetype)initWithMagic:(magic_t)magic {
     if (!(self = [super init]))
         return nil;
@@ -55,21 +72,24 @@ static magic_t kMagic;
     return self;
 }
 
-- (void)checkFileURL:(NSURL *)fileURL {
-    magic_setflags(self.magic, MAGIC_MIME);
-    const char *output = magic_file(self.magic, fileURL.fileSystemRepresentation);
-    NSString *string = [NSString stringWithUTF8String:output];
+- (NSString *)_magicStringForFileURL:(NSURL *)fileURL magicFlags:(int)magicFlags; {
+    magic_setflags(self.magic, magicFlags);
+    const char *magicString = magic_file(self.magic, fileURL.fileSystemRepresentation);
     
-    KSTLog(@"check file URL %@, result %@",fileURL,string);
+    return [NSString stringWithUTF8String:magicString];
 }
-
-+ (KSOFileMagicManager *)sharedManager {
-    static KSOFileMagicManager *kRetval;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        kRetval = [[KSOFileMagicManager alloc] init];
-    });
-    return kRetval;
+- (KSOFileMagicAttributes *)_attributesForMagicString:(NSString *)magicString; {
+    NSString *MIMEType = [magicString stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
+    NSString *UTI = (__bridge_transfer NSString *)UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (__bridge CFStringRef)MIMEType, NULL);
+    
+    if (UTTypeIsDynamic((__bridge CFStringRef)UTI)) {
+        return nil;
+    }
+    
+    NSArray *fileExtensions = (__bridge_transfer NSArray *)UTTypeCopyAllTagsWithClass((__bridge CFStringRef)UTI, kUTTagClassFilenameExtension);
+    NSSet *fileExtensionsSet = [NSSet setWithArray:fileExtensions];
+    
+    return [[KSOFileMagicAttributes alloc] initWithUniformTypeIdentifier:UTI MIMEType:MIMEType fileExtensions:fileExtensionsSet];
 }
 
 @end
