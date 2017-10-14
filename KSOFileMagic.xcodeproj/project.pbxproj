@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		070390E41F92668B00D29F8F /* KSOFileMagic.h in Headers */ = {isa = PBXBuildFile; fileRef = 070390E21F92668B00D29F8F /* KSOFileMagic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		070390EC1F9268F100D29F8F /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070390ED1F9268F100D29F8F /* Stanley.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		070390DF1F92668A00D29F8F /* KSOFileMagic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KSOFileMagic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		070390E21F92668B00D29F8F /* KSOFileMagic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOFileMagic.h; sourceTree = "<group>"; };
-		070390E31F92668B00D29F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		070390E31F92668B00D29F8F /* KSOFileMagic-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KSOFileMagic-iOS-Info.plist"; sourceTree = "<group>"; };
+		070390EA1F9267DD00D29F8F /* KSOFileMagic-Info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KSOFileMagic-Info.h"; sourceTree = "<group>"; };
+		070390ED1F9268F100D29F8F /* Stanley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Stanley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +24,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070390EC1F9268F100D29F8F /* Stanley.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +36,7 @@
 			children = (
 				070390E11F92668A00D29F8F /* KSOFileMagic */,
 				070390E01F92668A00D29F8F /* Products */,
+				070390EB1F9268F100D29F8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,9 +52,34 @@
 			isa = PBXGroup;
 			children = (
 				070390E21F92668B00D29F8F /* KSOFileMagic.h */,
-				070390E31F92668B00D29F8F /* Info.plist */,
+				070390E81F9267A300D29F8F /* Source */,
+				070390E91F9267C000D29F8F /* Supporting Files */,
 			);
 			path = KSOFileMagic;
+			sourceTree = "<group>";
+		};
+		070390E81F9267A300D29F8F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		070390E91F9267C000D29F8F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				070390E31F92668B00D29F8F /* KSOFileMagic-iOS-Info.plist */,
+				070390EA1F9267DD00D29F8F /* KSOFileMagic-Info.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		070390EB1F9268F100D29F8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				070390ED1F9268F100D29F8F /* Stanley.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -66,9 +96,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		070390DE1F92668A00D29F8F /* KSOFileMagic */ = {
+		070390DE1F92668A00D29F8F /* KSOFileMagic-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 070390E71F92668B00D29F8F /* Build configuration list for PBXNativeTarget "KSOFileMagic" */;
+			buildConfigurationList = 070390E71F92668B00D29F8F /* Build configuration list for PBXNativeTarget "KSOFileMagic-iOS" */;
 			buildPhases = (
 				070390DA1F92668A00D29F8F /* Sources */,
 				070390DB1F92668A00D29F8F /* Frameworks */,
@@ -79,7 +109,7 @@
 			);
 			dependencies = (
 			);
-			name = KSOFileMagic;
+			name = "KSOFileMagic-iOS";
 			productName = KSOFileMagic;
 			productReference = 070390DF1F92668A00D29F8F /* KSOFileMagic.framework */;
 			productType = "com.apple.product-type.framework";
@@ -112,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				070390DE1F92668A00D29F8F /* KSOFileMagic */,
+				070390DE1F92668A00D29F8F /* KSOFileMagic-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -205,9 +235,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = KSOFileMagic/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/KSOFileMagic/KSOFileMagic-iOS-Info.plist";
+				INFOPLIST_PREFIX_HEADER = "$(SRCROOT)/KSOFileMagic/KSOFileMagic-Info.h";
+				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,9 +302,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = KSOFileMagic/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/KSOFileMagic/KSOFileMagic-iOS-Info.plist";
+				INFOPLIST_PREFIX_HEADER = "$(SRCROOT)/KSOFileMagic/KSOFileMagic-Info.h";
+				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kosoku.ksofilemagic;
@@ -298,7 +332,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		070390E71F92668B00D29F8F /* Build configuration list for PBXNativeTarget "KSOFileMagic" */ = {
+		070390E71F92668B00D29F8F /* Build configuration list for PBXNativeTarget "KSOFileMagic-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				070390E51F92668B00D29F8F /* Debug */,
