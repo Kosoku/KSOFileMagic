@@ -1,5 +1,5 @@
 //
-//  KSOFileMagic.h
+//  NSURL+KSOFileMagicExtensions.h
 //  KSOFileMagic
 //
 //  Created by William Towe on 10/14/17.
@@ -15,16 +15,15 @@
 
 #import <Foundation/Foundation.h>
 
-//! Project version number for KSOFileMagic.
-FOUNDATION_EXPORT double KSOFileMagicVersionNumber;
+NS_ASSUME_NONNULL_BEGIN
 
-//! Project version string for KSOFileMagic.
-FOUNDATION_EXPORT const unsigned char KSOFileMagicVersionString[];
+@class KSOFileMagicAttributes;
 
-// In this header, you should import all the public headers of your framework using statements like #import <KSOFileMagic/PublicHeader.h>
+@interface NSURL (KSOFileMagicExtensions)
 
-#import <KSOFileMagic/KSOFileMagicManager.h>
-#import <KSOFileMagic/KSOFileMagicAttributes.h>
-#import <KSOFileMagic/NSURL+KSOFileMagicExtensions.h>
-#import <KSOFileMagic/NSString+KSOFileMagicExtensions.h>
-#import <KSOFileMagic/NSData+KSOFileMagicExtensions.h>
++ (nullable KSOFileMagicAttributes *)KSO_fileMagicAttributesForFileURL:(NSURL *)fileURL;
+- (nullable KSOFileMagicAttributes *)KSO_fileMagicAttributes;
+
+@end
+
+NS_ASSUME_NONNULL_END

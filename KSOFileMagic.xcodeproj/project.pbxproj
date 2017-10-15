@@ -117,6 +117,18 @@
 		070392131F92B29500D29F8F /* KSOFileMagicAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0703920F1F92B29500D29F8F /* KSOFileMagicAttributes.m */; };
 		070392161F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 070392141F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		070392171F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 070392141F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		07C058F01F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C058EE1F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07C058F11F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C058EE1F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07C058F21F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C058EF1F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.m */; };
+		07C058F31F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C058EF1F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.m */; };
+		07C058F61F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C058F41F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07C058F71F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C058F41F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07C058F81F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C058F51F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.m */; };
+		07C058F91F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C058F51F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.m */; };
+		07C058FC1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C058FA1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07C058FD1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C058FA1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07C058FE1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C058FB1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.m */; };
+		07C058FF1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C058FB1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +226,12 @@
 		070392141F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h"; sourceTree = "<group>"; };
 		07C058BB1F92D5E70050C5F4 /* Stanley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Stanley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C058BC1F92D5ED0050C5F4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS11.0.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		07C058EE1F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+KSOFileMagicExtensions.h"; sourceTree = "<group>"; };
+		07C058EF1F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+KSOFileMagicExtensions.m"; sourceTree = "<group>"; };
+		07C058F41F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+KSOFileMagicExtensions.h"; sourceTree = "<group>"; };
+		07C058F51F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+KSOFileMagicExtensions.m"; sourceTree = "<group>"; };
+		07C058FA1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+KSOFileMagicExtensions.h"; sourceTree = "<group>"; };
+		07C058FB1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+KSOFileMagicExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +303,12 @@
 				070391A11F9283D800D29F8F /* KSOFileMagicManager.m */,
 				0703920E1F92B29500D29F8F /* KSOFileMagicAttributes.h */,
 				0703920F1F92B29500D29F8F /* KSOFileMagicAttributes.m */,
+				07C058EE1F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.h */,
+				07C058EF1F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.m */,
+				07C058F41F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.h */,
+				07C058F51F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.m */,
+				07C058FA1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.h */,
+				07C058FB1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.m */,
 				0703914A1F927BA800D29F8F /* Private */,
 			);
 			name = Source;
@@ -395,7 +419,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				070391A21F9283D800D29F8F /* KSOFileMagicManager.h in Headers */,
+				07C058F01F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.h in Headers */,
 				070391871F927C9500D29F8F /* file.h in Headers */,
+				07C058FC1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.h in Headers */,
 				070391971F927C9500D29F8F /* readelf.h in Headers */,
 				070391AA1F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.h in Headers */,
 				070392161F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h in Headers */,
@@ -409,6 +435,7 @@
 				070392101F92B29500D29F8F /* KSOFileMagicAttributes.h in Headers */,
 				070391851F927C9500D29F8F /* file_opts.h in Headers */,
 				070390E41F92668B00D29F8F /* KSOFileMagic.h in Headers */,
+				07C058F61F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +444,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				070391DE1F9291BB00D29F8F /* mygetopt.h in Headers */,
+				07C058F11F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.h in Headers */,
 				070391DD1F9291BB00D29F8F /* magic.h in Headers */,
+				07C058FD1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.h in Headers */,
 				070391D31F9291BB00D29F8F /* file.h in Headers */,
 				070391CD1F9291BB00D29F8F /* der.h in Headers */,
 				070392171F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h in Headers */,
@@ -431,6 +460,7 @@
 				070392111F92B29500D29F8F /* KSOFileMagicAttributes.h in Headers */,
 				070391E31F9291BB00D29F8F /* readelf.h in Headers */,
 				070391C91F9291BB00D29F8F /* cdf.h in Headers */,
+				07C058F71F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				070391861F927C9500D29F8F /* file.c in Sources */,
+				07C058F21F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.m in Sources */,
 				0703917F1F927C9500D29F8F /* ctime_r.c in Sources */,
 				0703919D1F927C9500D29F8F /* vasprintf.c in Sources */,
 				070391881F927C9500D29F8F /* fmtcheck.c in Sources */,
@@ -599,7 +630,9 @@
 				070391951F927C9500D29F8F /* readcdf.c in Sources */,
 				0703917A1F927C9500D29F8F /* asprintf.c in Sources */,
 				070391941F927C9500D29F8F /* print.c in Sources */,
+				07C058F81F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.m in Sources */,
 				0703917E1F927C9500D29F8F /* compress.c in Sources */,
+				07C058FE1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.m in Sources */,
 				0703918E1F927C9500D29F8F /* is_tar.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				070391D41F9291BB00D29F8F /* fmtcheck.c in Sources */,
+				07C058F31F92E5D40050C5F4 /* NSURL+KSOFileMagicExtensions.m in Sources */,
 				070391E11F9291BB00D29F8F /* readcdf.c in Sources */,
 				070391E71F9291BB00D29F8F /* vasprintf.c in Sources */,
 				070391CE1F9291BB00D29F8F /* dprintf.c in Sources */,
@@ -638,7 +672,9 @@
 				070391D61F9291BB00D29F8F /* funcs.c in Sources */,
 				070391BD1F9291A600D29F8F /* KSOFileMagicManager.m in Sources */,
 				070391D71F9291BB00D29F8F /* getline.c in Sources */,
+				07C058F91F92E6BF0050C5F4 /* NSString+KSOFileMagicExtensions.m in Sources */,
 				070391CA1F9291BB00D29F8F /* compress.c in Sources */,
+				07C058FF1F92E9560050C5F4 /* NSData+KSOFileMagicExtensions.m in Sources */,
 				070391DB1F9291BB00D29F8F /* localtime_r.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
