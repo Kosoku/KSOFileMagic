@@ -53,7 +53,6 @@
 		070391A31F9283D800D29F8F /* KSOFileMagicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 070391A11F9283D800D29F8F /* KSOFileMagicManager.m */; };
 		070391AA1F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 070391A81F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		070391AB1F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 070391A91F928AEC00D29F8F /* NSBundle+KSOFileMagicExtensionsPrivate.m */; };
-		070391BA1F92915A00D29F8F /* KSOFileMagic-macOS-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070391B91F92915A00D29F8F /* KSOFileMagic-macOS-Info.plist */; };
 		070391BB1F92919B00D29F8F /* KSOFileMagic.h in Headers */ = {isa = PBXBuildFile; fileRef = 070390E21F92668B00D29F8F /* KSOFileMagic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		070391BC1F9291A100D29F8F /* KSOFileMagicManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 070391A01F9283D800D29F8F /* KSOFileMagicManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		070391BD1F9291A600D29F8F /* KSOFileMagicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 070391A11F9283D800D29F8F /* KSOFileMagicManager.m */; };
@@ -213,6 +212,8 @@
 		0703920E1F92B29500D29F8F /* KSOFileMagicAttributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOFileMagicAttributes.h; sourceTree = "<group>"; };
 		0703920F1F92B29500D29F8F /* KSOFileMagicAttributes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOFileMagicAttributes.m; sourceTree = "<group>"; };
 		070392141F92B38E00D29F8F /* KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KSOFileMagicAttributes+KSOFileMagicExtensionsPrivate.h"; sourceTree = "<group>"; };
+		07C058BB1F92D5E70050C5F4 /* Stanley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Stanley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07C058BC1F92D5ED0050C5F4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS11.0.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +303,8 @@
 		070390EB1F9268F100D29F8F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07C058BC1F92D5ED0050C5F4 /* libz.tbd */,
+				07C058BB1F92D5E70050C5F4 /* Stanley.framework */,
 				0703920C1F929B0E00D29F8F /* libz.tbd */,
 				070392091F92996600D29F8F /* libz.tbd */,
 				070391E91F9292BB00D29F8F /* Stanley.framework */,
@@ -538,7 +541,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				070391BA1F92915A00D29F8F /* KSOFileMagic-macOS-Info.plist in Resources */,
 				0703914D1F927C1800D29F8F /* magic.mgc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

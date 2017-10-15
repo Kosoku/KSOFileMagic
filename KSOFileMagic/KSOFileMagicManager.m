@@ -32,9 +32,9 @@ static magic_t kMagic;
 
 - (instancetype)initWithMagic:(magic_t)magic;
 
-- (NSString *)_magicStringForFileURL:(NSURL *)fileURL magicFlags:(int)magicFlags;
-- (NSString *)_magicStringForData:(NSData *)data magicFlags:(int)magicFlags;
-- (KSOFileMagicAttributes *)_attributesForMagicString:(NSString *)magicString;
+- (NSString *)_MIMETypeForFileURL:(NSURL *)fileURL magicFlags:(int)magicFlags;
+- (NSString *)_MIMETypeForData:(NSData *)data magicFlags:(int)magicFlags;
+- (KSOFileMagicAttributes *)_attributesForMIMEType:(NSString *)magicString;
 @end
 
 @implementation KSOFileMagicManager
@@ -52,13 +52,26 @@ static magic_t kMagic;
 }
 #pragma mark *** Public Methods ***
 - (KSOFileMagicAttributes *)attributesForFileURL:(NSURL *)fileURL {
-    return [self _attributesForMagicString:[self _magicStringForFileURL:fileURL magicFlags:self.baseMagicFlags]];
+    // if we have a path extension, see if the system can identify it, otherwise fall back to magic functions
+    if (fileURL.pathExtension.length > 0) {
+        NSString *UTI = (__bridge_transfer NSString *)UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)fileURL.pathExtension, NULL);
+        
+        if (UTTypeIsDeclared((__bridge CFStringRef)UTI)) {
+            NSString *MIMEType = (__bridge_transfer NSString *)UTTypeCopyPreferredTagWithClass((__bridge CFStringRef)UTI, kUTTagClassMIMEType);
+            NSArray *fileExtensions = (__bridge_transfer NSArray *)UTTypeCopyAllTagsWithClass((__bridge CFStringRef)UTI, kUTTagClassFilenameExtension);
+            NSSet *fileExtensionsSet = [NSSet setWithArray:fileExtensions];
+            
+            return [[KSOFileMagicAttributes alloc] initWithUniformTypeIdentifier:UTI MIMEType:MIMEType fileExtensions:fileExtensionsSet];
+        }
+    }
+    
+    return [self _attributesForMIMEType:[self _MIMETypeForFileURL:fileURL magicFlags:self.baseMagicFlags]];
 }
 - (KSOFileMagicAttributes *)attributesForPath:(NSString *)path {
-    return [self _attributesForMagicString:[self _magicStringForFileURL:[NSURL fileURLWithPath:path] magicFlags:self.baseMagicFlags]];
+    return [self attributesForFileURL:[NSURL fileURLWithPath:path]];
 }
 - (KSOFileMagicAttributes *)attributesForData:(NSData *)data {
-    return [self _attributesForMagicString:[self _magicStringForData:data magicFlags:self.baseMagicFlags]];
+    return [self _attributesForMIMEType:[self _MIMETypeForData:data magicFlags:self.baseMagicFlags]];
 }
 #pragma mark Properties
 + (KSOFileMagicManager *)sharedManager {
@@ -80,20 +93,19 @@ static magic_t kMagic;
     return self;
 }
 
-- (NSString *)_magicStringForFileURL:(NSURL *)fileURL magicFlags:(int)magicFlags; {
+- (NSString *)_MIMETypeForFileURL:(NSURL *)fileURL magicFlags:(int)magicFlags; {
     magic_setflags(self.magic, magicFlags);
-    const char *magicString = magic_file(self.magic, fileURL.fileSystemRepresentation);
+    const char *MIMEType = magic_file(self.magic, fileURL.fileSystemRepresentation);
     
-    return [NSString stringWithUTF8String:magicString];
+    return [[NSString stringWithUTF8String:MIMEType] stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
 }
-- (NSString *)_magicStringForData:(NSData *)data magicFlags:(int)magicFlags; {
+- (NSString *)_MIMETypeForData:(NSData *)data magicFlags:(int)magicFlags; {
     magic_setflags(self.magic, magicFlags);
-    const char *magicString = magic_buffer(self.magic, data.bytes, data.length);
+    const char *MIMEType = magic_buffer(self.magic, data.bytes, data.length);
     
-    return [NSString stringWithUTF8String:magicString];
+    return [[NSString stringWithUTF8String:MIMEType] stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
 }
-- (KSOFileMagicAttributes *)_attributesForMagicString:(NSString *)magicString; {
-    NSString *MIMEType = [magicString stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
+- (KSOFileMagicAttributes *)_attributesForMIMEType:(NSString *)MIMEType; {
     NSString *UTI = (__bridge_transfer NSString *)UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (__bridge CFStringRef)MIMEType, NULL);
     
     if (UTTypeIsDynamic((__bridge CFStringRef)UTI)) {
