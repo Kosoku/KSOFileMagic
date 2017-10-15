@@ -21,7 +21,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSURL (KSOFileMagicExtensions)
 
+/**
+ Returns the attributes for the file at *fileURL*. This method will not perform file I/O unless the attributes cannot be determined by the file extension (e.g. the *fileURL* is missing a file extension).
+ 
+ @param fileURL The URL of the file to examine
+ @return The file magic attributes
+ */
 + (nullable KSOFileMagicAttributes *)KSO_fileMagicAttributesForFileURL:(NSURL *)fileURL;
+/**
+ Returns the attributes for the receiver.
+ 
+ @return The file magic attributes
+ */
 - (nullable KSOFileMagicAttributes *)KSO_fileMagicAttributes;
 
 @end

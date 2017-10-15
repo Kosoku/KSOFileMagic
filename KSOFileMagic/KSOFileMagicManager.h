@@ -19,12 +19,38 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class KSOFileMagicAttributes;
 
+/**
+ KSOFileMagicManager provides an interface to the Darwin file command, which can examine the contents of a file to determine its type. This is useful if the file URL or path does not provide a file extension from which to determine the type. Similarly, if you have raw data, from a network request for example, its contents can be inspected to determine its type.
+ 
+ For methods that take a NSURL or NSString, if a file extension is available, the UTType family of functions are used to determine the attributes before falling back to file I/O.
+ */
 @interface KSOFileMagicManager : NSObject
 
+/**
+ Get the shared manager. This class is a singleton and you cannot create additional instances of it.
+ */
 @property (class,readonly,nonatomic) KSOFileMagicManager *sharedManager;
 
+/**
+ Returns the attributes for the file at *fileURL*. This method will not perform file I/O unless the attributes cannot be determined by the file extension (e.g. the *fileURL* is missing a file extension).
+ 
+ @param fileURL The URL of the file to examine
+ @return The file magic attributes
+ */
 - (nullable KSOFileMagicAttributes *)attributesForFileURL:(NSURL *)fileURL;
+/**
+ Returns the attributes for the file at *path*. This calls through to attributesForFileURL:, passing [NSURL fileURLWithPath:path].
+ 
+ @param path The path of the file to examine
+ @return The file magic attributes
+ */
 - (nullable KSOFileMagicAttributes *)attributesForPath:(NSString *)path;
+/**
+ Returns the attributes for the *data*. This always performs I/O, but not necessarily file I/O if the data is in memory.
+ 
+ @param data The data to examine
+ @return The file magic attributes
+ */
 - (nullable KSOFileMagicAttributes *)attributesForData:(NSData *)data;
 
 - (instancetype)init NS_UNAVAILABLE;

@@ -21,7 +21,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSData (KSOFileMagicExtensions)
 
+/**
+ Returns the attributes for the *data*. This always performs I/O, but not necessarily file I/O if the data is in memory.
+ 
+ @param data The data to examine
+ @return The file magic attributes
+ */
 + (nullable KSOFileMagicAttributes *)KSO_fileMagicAttributesForData:(NSData *)data;
+/**
+ Returns the attributes of the receiver.
+ 
+ @return The file magic attributes
+ */
 - (nullable KSOFileMagicAttributes *)KSO_fileMagicAttributes;
 
 @end

@@ -17,12 +17,30 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ KSOFileMagicAttributes represent the type of a file. This includes its UTI, MIME type, and possible file extensions. Instances of this class are returned from the KSOFileMagicManager methods. You cannot create instances of this class on your own.
+ */
 @interface KSOFileMagicAttributes : NSObject
 
+/**
+ Get the uniform type identifier (UTI) of the receiver. See the UTCoreTypes.h header for possible values.
+ */
 @property (readonly,copy,nonatomic) NSString *uniformTypeIdentifier;
+/**
+ Get the MIME type of the receiver. See https://en.wikipedia.org/wiki/Media_type for examples.
+ */
 @property (readonly,copy,nonatomic) NSString *MIMEType;
+/**
+ Get the possible file extensions of the receiver. For example, public.jpeg returns a set of @"jpg", @"jpeg", and @"jpe".
+ */
 @property (readonly,copy,nonatomic) NSSet<NSString *> *fileExtensions;
 
+/**
+ Returns YES if the self.fileExtensions contains the lowercase version of *fileExtension*, otherwise NO.
+ 
+ @param fileExtension The file extension to check
+ @return YES if self.fileExtensions contains it, otherwise NO
+ */
 - (BOOL)hasFileExtension:(NSString *)fileExtension;
 
 - (instancetype)init NS_UNAVAILABLE;

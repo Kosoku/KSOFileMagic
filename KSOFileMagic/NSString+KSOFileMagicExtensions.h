@@ -21,7 +21,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (KSOFileMagicExtensions)
 
+/**
+ Returns the attributes for the file at *path*.
+ 
+ @param path The path of the file to examine
+ @return The file magic attributes
+ */
 + (nullable KSOFileMagicAttributes *)KSO_fileMagicAttributesForPath:(NSString *)path;
+/**
+ Returns the attributes for the receiver.
+ 
+ @return The file magic attributes
+ */
 - (nullable KSOFileMagicAttributes *)KSO_fileMagicAttributes;
 
 @end
